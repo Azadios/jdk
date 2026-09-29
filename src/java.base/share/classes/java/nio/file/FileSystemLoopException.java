@@ -48,4 +48,22 @@ public class FileSystemLoopException
     public FileSystemLoopException(String file) {
         super(file);
     }
+
+    /**
+     * Constructs an instance of this class. This constructor should be used
+     * when an operation involving two files fails, or there is additional
+     * information to explain the reason.
+     *
+     * @param   file
+     *          a string identifying the file causing the cycle or {@code null} if
+     *          not known.
+     * @param   other
+     *          a string identifying the other file or {@code null} if there
+     *          isn't another file or if not known
+     * @param   reason
+     *          a reason message with additional information or {@code null}
+     */
+    public FileSystemLoopException(String file, String other, String reason) {
+        super(file, other, reason);
+    }
 }
